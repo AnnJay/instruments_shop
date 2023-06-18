@@ -6,6 +6,7 @@ export const COMPONENT_COLORS = {
   fallow: '#BF9F70',
   hotToddy: '#A67125',
   isabelle: '#EEECE7',
+  grayOrange: '#E3E0D8',
 }
 
 export const FONT_COLORS = {

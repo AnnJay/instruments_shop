@@ -12,7 +12,7 @@ export const HomePage = () => {
   const content = (
     <>
       <MainTitle>Широкий ассортимент инструментов на любой вкус</MainTitle>
-      <HomePageSlider style={{ width: '50%' }} images={SLIDER_IMAGES} />
+      <HomePageSlider images={SLIDER_IMAGES} />
     </>
   )
 

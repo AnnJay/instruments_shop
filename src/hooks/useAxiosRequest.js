@@ -10,20 +10,23 @@ export const useAxiosRequest = (url, method, payload) => {
 
   if (payload) requestConfig.data = payload
 
-  useEffect(() => {
-    (async () => {
+  const fetch = (requestConfig) => {
+    ;(async () => {
+      setLoaded(false)
+      
       try {
         const response = await InstrumentsInstance.request(requestConfig)
 
-        console.log(response)
-        setData(response.data)
+        setData(response.data.data)
       } catch (error) {
         setError(error.message)
       } finally {
         setLoaded(true)
       }
     })()
-  }, [])
+  }
 
-  return { data, error, loaded }
+  useEffect(() => fetch(requestConfig), [])
+
+  return { data, error, loaded, fetch }
 }

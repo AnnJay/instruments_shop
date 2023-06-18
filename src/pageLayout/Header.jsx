@@ -32,7 +32,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <HeaderInnerContainer>
-        <Link to='/categories'>
+        <Link to="/">
           <StyledLogo src="/images/logo.svg" alt="site logo" />
         </Link>
 

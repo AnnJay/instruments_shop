@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb } from 'antd/lib'
 import styled from 'styled-components'
+
 import { FONT_COLORS, FONT_SIZE } from '../constants'
-import { Link } from 'react-router-dom'
+import { getCategoryNameByType } from '../functions'
 
 export const StyledBreadcrumb = styled(Breadcrumb)`
   margin-bottom: 30px;
@@ -21,21 +23,38 @@ export const StyledBreadcrumb = styled(Breadcrumb)`
     background-color: transparent;
   }
 `
-const testitems = [
-  {
-    title: 'Главная',
-  },
-  {
-    title: <Link>Application Center</Link>,
-  },
-  {
-    title: <Link>Application List</Link>,
-  },
-  {
-    title: 'An Application',
-  },
-]
 
-export const Breadcrumbs = ({ items }) => {
-  return <StyledBreadcrumb separator=">" items={testitems} />
+export const getBreadcrumbs = (categoryType, instrumentId) => {
+  const breadcrumbs = [
+    {
+      title: <Link to="/">Главная</Link>,
+    },
+  ]
+
+  if ((categoryType, instrumentId)) {
+    breadcrumbs.push({
+      title: (
+        <Link to={`/${categoryType}`}>
+          {getCategoryNameByType(categoryType)}
+        </Link>
+      ),
+    })
+  } else if (categoryType) {
+    breadcrumbs.push({ title: getCategoryNameByType(categoryType) })
+  }
+
+  return breadcrumbs
+}
+
+export const Breadcrumbs = () => {
+  const { categoryType, instrumentId } = useParams()
+
+  if (!categoryType && !instrumentId) return null
+
+  return (
+    <StyledBreadcrumb
+      separator=">"
+      items={getBreadcrumbs(categoryType, instrumentId)}
+    />
+  )
 }

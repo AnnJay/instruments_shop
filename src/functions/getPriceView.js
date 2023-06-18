@@ -1,0 +1,1 @@
+export const getPriceView = (price) => `${(+price).toLocaleString('ru')} ₽`

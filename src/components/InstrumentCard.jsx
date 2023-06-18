@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import { COMPONENT_COLORS, FONT_COLORS, FONT_SIZE } from '../constants'
 import { Button } from 'antd/lib'
+
+import { COMPONENT_COLORS, FONT_COLORS, FONT_SIZE } from '../constants'
+import { getPriceView } from '../functions'
 
 export const CardContainer = styled.div`
   width: 300px;
@@ -28,8 +31,9 @@ export const CardContainer = styled.div`
   }
 
   span {
-    font-size: ${FONT_SIZE.xs};
-    font-weight: 500;
+    font-size: ${FONT_SIZE.sm};
+    font-weight: 800 !important;
+    text-align: center;
   }
 `
 
@@ -59,14 +63,20 @@ const StyledButton = styled(Button)`
   }
 `
 
-export const InstrumentCard = ({ imgSrc, name, price, id }) => {
+export const InstrumentCard = ({ imgUrl, name, price, id }) => {
+  const { categoryType } = useParams()
+
   return (
     <CardContainer>
-      {imgSrc && <CardImage src={imgSrc} alt={name} />}
+      {imgUrl && (
+        <Link to={`/${categoryType}/${id}`}>
+          <CardImage src={imgUrl} alt={name} />
+        </Link>
+      )}
 
       {name && <h3>{name}</h3>}
 
-      {price && <span>{price}</span>}
+      {price && <span>{getPriceView(price)}</span>}
 
       <StyledButton>В корзину</StyledButton>
     </CardContainer>

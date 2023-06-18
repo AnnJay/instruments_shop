@@ -1,3 +1,9 @@
+import { PageLayout } from './pageLayout'
+
 export const App = () => {
-    return <div></div>
+  return (
+    <div>
+      <PageLayout />
+    </div>
+  )
 }

@@ -5,7 +5,6 @@ export const COMPONENT_COLORS = {
   chardonnay: '#FFC571',
   fallow: '#BF9F70',
   hotToddy: '#A67125',
-  fieldgrau: '#486758',
 }
 
 export const FONT_COLORS = {
@@ -13,6 +12,8 @@ export const FONT_COLORS = {
   secondary: '#432C26',
   title: '#432C26',
   body: '#38211D',
+  link: '#486758',
+  breadcrumbLink: '#2A62A3'
 }
 
 export const FONT_SIZE = {
@@ -33,7 +34,7 @@ export const CATEGORIES = [
 ]
 
 export const ADDITIONAL_MENU_ITEMS = [
-  { id: 6, label: 'О нас', link: '#', linkType: null },
+  { id: 6, label: 'О нас', link: '/about-us', linkType: null },
 ]
 
 export const CONTACTS = [

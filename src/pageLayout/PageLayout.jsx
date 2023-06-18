@@ -1,9 +1,10 @@
 import React from 'react'
-import { Breadcrumb, Layout } from 'antd'
+import { Layout } from 'antd/lib'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { ContentContainer } from './styledComponents'
 import styled from 'styled-components'
+import { Breadcrumbs } from './Breadcrumbs'
 
 const { Content } = Layout
 
@@ -20,12 +21,8 @@ export const PageLayout = ({ content }) => {
       <Header />
       <StyledContent>
         <ContentContainer>
-          <Breadcrumb>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-
+          <Breadcrumbs />
+          
           {content}
         </ContentContainer>
       </StyledContent>

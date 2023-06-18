@@ -1,9 +1,11 @@
-import { PageLayout } from './pageLayout'
+import { Route, Routes } from 'react-router-dom'
+
+import { HomePage } from './pages'
 
 export const App = () => {
   return (
-    <div>
-      <PageLayout />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   )
 }

@@ -8,7 +8,7 @@ import styled from 'styled-components'
 export const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
-  padding: 60px;
+  padding: 45px;
   background-color: ${COMPONENT_COLORS.caramel};
 `
 

@@ -5,6 +5,7 @@ export const COMPONENT_COLORS = {
   chardonnay: '#FFC571',
   fallow: '#BF9F70',
   hotToddy: '#A67125',
+  isabelle: '#EEECE7',
 }
 
 export const FONT_COLORS = {
@@ -13,7 +14,7 @@ export const FONT_COLORS = {
   title: '#432C26',
   body: '#38211D',
   link: '#486758',
-  breadcrumbLink: '#2A62A3'
+  breadcrumbLink: '#2A62A3',
 }
 
 export const FONT_SIZE = {
@@ -56,4 +57,11 @@ export const FOOTER_BLOCKS = [
     content: 'Магазин гитар, г.Новочеркасск, ул. Московская, 7.',
     linksList: CONTACTS,
   },
+]
+
+export const SLIDER_IMAGES = [
+  '/images/homeSlider/slider_acoustic.webp',
+  '/images/homeSlider/slider_electric.webp',
+  '/images/homeSlider/slider_bas.webp',
+  '/images/homeSlider/slider_ukulele.webp',
 ]

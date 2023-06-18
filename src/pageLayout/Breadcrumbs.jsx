@@ -5,6 +5,8 @@ import { FONT_COLORS, FONT_SIZE } from '../constants'
 import { Link } from 'react-router-dom'
 
 export const StyledBreadcrumb = styled(Breadcrumb)`
+  margin-bottom: 30px;
+
   li {
     font-size: ${FONT_SIZE.sm};
     color: ${FONT_COLORS.secondary} !important;

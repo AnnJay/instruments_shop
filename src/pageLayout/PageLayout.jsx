@@ -12,7 +12,7 @@ export const StyledContent = styled(Content)`
   display: flex;
   justify-content: center;
   height: 100%;
-  padding: 60px;
+  padding: 45px;
 `
 
 export const PageLayout = ({ content }) => {

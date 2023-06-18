@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export const StyledHeader = styled.header`
   height: 150px;
-  padding: 60px;
+  padding: 45px;
   display: flex;
   justify-content: center;
   align-items: center;

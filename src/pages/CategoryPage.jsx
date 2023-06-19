@@ -18,7 +18,6 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 `
 
 export const CategoryPage = () => {
@@ -37,7 +36,7 @@ export const CategoryPage = () => {
       <CardsContainer>
         {data &&
           convertResponseFieldsToCamelCase(data).map((item) => (
-            <InstrumentCard {...item} />
+            <InstrumentCard key={item.id} {...item} />
           ))}
       </CardsContainer>
     </>

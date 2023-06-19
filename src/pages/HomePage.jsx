@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { PageLayout } from '../pageLayout'
-import { CategoryCard, HomePageSlider, PageContent } from '../components'
-import { CATEGORIES_CARD_DATA, FONT_COLORS, FONT_SIZE, SLIDER_IMAGES } from '../constants'
+import { CategoryCard, HomePageSlider } from '../components'
+import { CATEGORIES_CARD_DATA, FONT_COLORS, SLIDER_IMAGES } from '../constants'
 import { MainTitle } from '../pageLayout'
 
 export const GridContainer = styled.div`

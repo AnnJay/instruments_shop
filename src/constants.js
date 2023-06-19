@@ -27,7 +27,7 @@ export const FONT_SIZE = {
 }
 
 // Page layout constants and contact data
-export const CATEGORIES = [
+export const MENU_ITEMS = [
   {
     id: 1,
     label: 'Акустические гитары',
@@ -85,10 +85,6 @@ export const CATEGORIES_CARD_DATA = {
   },
 }
 
-export const ADDITIONAL_MENU_ITEMS = [
-  { id: 6, label: 'О нас', link: 'about-us', linkType: null },
-]
-
 // Contact information
 export const ADDRESS_LINE = 'Магазин гитар, г.Новочеркасск, ул. Московская, 7.'
 export const PHONE_NUMBER_VIEW = '+7-835-456-xx-xx'
@@ -100,7 +96,7 @@ export const CONTACTS = [
 export const FOOTER_BLOCKS = [
   {
     title: 'Каталог',
-    linksList: CATEGORIES,
+    linksList: MENU_ITEMS,
   },
   {
     title: 'О нас',

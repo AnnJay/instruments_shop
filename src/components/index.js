@@ -1,5 +1,7 @@
 export * from './CategoryCard'
+export * from './CommentSection'
 export * from './HomePageSlider'
 export * from './InstrumentCard'
+export * from './InstrumentSection'
 export * from './Loader'
 export * from './PageContent'

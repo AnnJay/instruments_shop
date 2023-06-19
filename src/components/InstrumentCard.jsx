@@ -10,6 +10,7 @@ export const CardContainer = styled.div`
   width: 300px;
   height: 420px;
   padding: 25px;
+  margin: 10px;
 
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@ export const CardContainer = styled.div`
 
   color: ${FONT_COLORS.secondary};
   transition: box-shadow 0.4s;
+  text-align: center;
 
   h3 {
     font-size: ${FONT_SIZE.xs};
@@ -33,7 +35,6 @@ export const CardContainer = styled.div`
   span {
     font-size: ${FONT_SIZE.sm};
     font-weight: 800 !important;
-    text-align: center;
   }
 `
 

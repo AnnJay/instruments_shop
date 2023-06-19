@@ -4,11 +4,10 @@ import { Menu } from 'antd/lib'
 import styled from 'styled-components'
 
 import {
-  ADDITIONAL_MENU_ITEMS,
-  CATEGORIES,
   COMPONENT_COLORS,
   FONT_COLORS,
   FONT_SIZE,
+  MENU_ITEMS,
 } from '../constants'
 
 export const StyledMenu = styled(Menu)`
@@ -42,8 +41,6 @@ export const StyledMenu = styled(Menu)`
   }
 `
 
-const MENU_ITEMS = [...CATEGORIES, ...ADDITIONAL_MENU_ITEMS]
-
 export const Navigation = () => {
   return (
     <StyledMenu
@@ -51,11 +48,7 @@ export const Navigation = () => {
       items={MENU_ITEMS.map((item) => {
         return {
           key: item.id,
-          label: (
-            <Link to={`/${item.link}`}>
-              {item.label}
-            </Link>
-          ),
+          label: <Link to={`/${item.link}`}>{item.label}</Link>,
         }
       })}
     />

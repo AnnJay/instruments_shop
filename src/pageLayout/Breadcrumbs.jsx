@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb } from 'antd/lib'
 import styled from 'styled-components'
 
 import { FONT_COLORS, FONT_SIZE } from '../constants'
 import { getCategoryNameByType } from '../functions'
+import { InstrumentContext } from '../context'
 
 export const StyledBreadcrumb = styled(Breadcrumb)`
   margin-bottom: 30px;
@@ -24,21 +25,26 @@ export const StyledBreadcrumb = styled(Breadcrumb)`
   }
 `
 
-export const getBreadcrumbs = (categoryType, instrumentId) => {
+export const getBreadcrumbs = (categoryType, instrument) => {
   const breadcrumbs = [
     {
       title: <Link to="/">Главная</Link>,
     },
   ]
 
-  if ((categoryType, instrumentId)) {
-    breadcrumbs.push({
-      title: (
-        <Link to={`/${categoryType}`}>
-          {getCategoryNameByType(categoryType)}
-        </Link>
-      ),
-    })
+  if (categoryType && instrument) {
+    breadcrumbs.push(
+      {
+        title: (
+          <Link to={`/${categoryType}`}>
+            {getCategoryNameByType(categoryType)}
+          </Link>
+        ),
+      },
+      {
+        title: instrument.name,
+      }
+    )
   } else if (categoryType) {
     breadcrumbs.push({ title: getCategoryNameByType(categoryType) })
   }
@@ -48,13 +54,14 @@ export const getBreadcrumbs = (categoryType, instrumentId) => {
 
 export const Breadcrumbs = () => {
   const { categoryType, instrumentId } = useParams()
+  const { instrument } = useContext(InstrumentContext)
 
   if (!categoryType && !instrumentId) return null
 
   return (
     <StyledBreadcrumb
       separator=">"
-      items={getBreadcrumbs(categoryType, instrumentId)}
+      items={getBreadcrumbs(categoryType, instrument)}
     />
   )
 }

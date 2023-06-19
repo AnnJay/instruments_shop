@@ -18,18 +18,19 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 `
 
 export const CategoryPage = () => {
   const { categoryType } = useParams()
 
-  const { data, loaded, fetch } = useAxiosRequest(`/categories/${categoryType}`, 'GET')
+  const { data, loaded, fetch } = useAxiosRequest(
+    `/categories/${categoryType}`,
+    'GET'
+  )
 
   useEffect(() => {
-    fetch(`/categories/${categoryType}`)
+    fetch()
   }, [categoryType])
-
 
   const content = (
     <>
@@ -37,7 +38,7 @@ export const CategoryPage = () => {
       <CardsContainer>
         {data &&
           convertResponseFieldsToCamelCase(data).map((item) => (
-            <InstrumentCard {...item} />
+            <InstrumentCard key={item.id} {...item} />
           ))}
       </CardsContainer>
     </>

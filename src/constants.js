@@ -27,26 +27,76 @@ export const FONT_SIZE = {
 }
 
 // Page layout constants and contact data
-export const CATEGORIES = [
-  { id: 1, label: 'Акустические гитары', link: 'acoustic', linkType: null },
-  { id: 2, label: 'Электрогитары', link: 'electric', linkType: null },
-  { id: 3, label: 'Бас-гитары', link: 'bas', linkType: null },
-  { id: 4, label: 'Классические гитары', link: 'classic', linkType: null },
-  { id: 5, label: 'Укулеле', link: 'ukulele', linkType: null },
+export const MENU_ITEMS = [
+  {
+    id: 1,
+    label: 'Акустические гитары',
+    link: 'acoustic',
+    linkType: null,
+    imgSrc: '#',
+  },
+  {
+    id: 2,
+    label: 'Электрогитары',
+    link: 'electric',
+    linkType: null,
+    imgSrc: '#',
+  },
+  { id: 3, label: 'Бас-гитары', link: 'bas', linkType: null, imgSrc: '#' },
+  {
+    id: 4,
+    label: 'Классические гитары',
+    link: 'classic',
+    linkType: null,
+    imgSrc: '#',
+  },
+  { id: 5, label: 'Укулеле', link: 'ukulele', linkType: null, imgSrc: '#' },
 ]
 
-export const ADDITIONAL_MENU_ITEMS = [
-  { id: 6, label: 'О нас', link: 'about-us', linkType: null },
-]
+export const CATEGORIES_CARD_DATA = {
+  acoustic: {
+    type: 'acoustic',
+    imgSrc: '/images/categories/acoustic.png',
+    description:
+      'В широком ассортименте представлены классические акустические гитары, инструменты с металлическими струнами, шести и двенадцатиструнные, укулеле, левосторонние модели, со звукоснимателем и без. ',
+  },
+  electric: {
+    type: 'electric',
+    imgSrc: '/images/categories/electric.png',
+    description:
+      'При выборе электрогитары стоит уделить особое внимание материалу корпуса, стилю исполняемой музыки, качественным характеристикам инструмента.',
+  },
+  bas: {
+    type: 'bas',
+    imgSrc: '/images/categories/bas.png',
+    description:
+      'Просты в настройке и имеют теплое динамичное звучание. Кроме того, можно не опасаться, что из-за севшей батарейки инструмент выйдет из строя прямо посреди выступления.',
+  },
+  classic: {
+    type: 'classic',
+    imgSrc: '/images/categories/classic.png',
+    description:
+      'Классические гитары хороши своей простотой и универсальностью.',
+  },
+  ukulele: {
+    type: 'ukulele',
+    imgSrc: '/images/categories/ukulele.png',
+    description: 'Мягкий и жизнерадостный тембр, достаточно низкая громкость.',
+  },
+}
+
+// Contact information
+export const ADDRESS_LINE = 'Магазин гитар, г.Новочеркасск, ул. Московская, 7.'
+export const PHONE_NUMBER_VIEW = '+7-835-456-xx-xx'
 
 export const CONTACTS = [
-  { id: 8, label: '+7-835-456-xx-xx', link: '88002000600', linkType: 'tel' },
+  { id: 8, label: PHONE_NUMBER_VIEW, link: '88002000600', linkType: 'tel' },
 ]
 
 export const FOOTER_BLOCKS = [
   {
     title: 'Каталог',
-    linksList: CATEGORIES,
+    linksList: MENU_ITEMS,
   },
   {
     title: 'О нас',
@@ -55,11 +105,12 @@ export const FOOTER_BLOCKS = [
   },
   {
     title: 'Контакты',
-    content: 'Магазин гитар, г.Новочеркасск, ул. Московская, 7.',
+    content: ADDRESS_LINE,
     linksList: CONTACTS,
   },
 ]
 
+// Links for home page slider
 export const SLIDER_IMAGES = [
   '/images/homeSlider/slider_acoustic.webp',
   '/images/homeSlider/slider_electric.webp',

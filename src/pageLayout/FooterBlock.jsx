@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 import { FONT_COLORS, FONT_SIZE } from '../constants'
 
 export const List = styled.ul`
@@ -50,13 +52,11 @@ export const FooterBlock = ({ title, content, linksList }) => {
         <List>
           {linksList.map((item) => (
             <li key={item.id}>
-              <a
-                href={
-                  item.linkType ? `${item.linkType}:${item.link}` : item.link
-                }
-              >
-                {item.label}
-              </a>
+              {item.linkType ? (
+                <a href={`${item.linkType}:${item.link}`}>{item.label}</a>
+              ) : (
+                <Link to={`/${item.link}`}>{item.label}</Link>
+              )}
             </li>
           ))}
         </List>

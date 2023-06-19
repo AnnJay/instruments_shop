@@ -1,4 +1,4 @@
-import { CATEGORIES } from '../constants'
+import { MENU_ITEMS } from '../constants'
 
 export const getCategoryNameByType = (type) =>
-  CATEGORIES.find((category) => category.link === type).label
+  MENU_ITEMS.find((category) => category.link === type).label

@@ -28,11 +28,29 @@ export const FONT_SIZE = {
 
 // Page layout constants and contact data
 export const CATEGORIES = [
-  { id: 1, label: 'Акустические гитары', link: 'acoustic', linkType: null },
-  { id: 2, label: 'Электрогитары', link: 'electric', linkType: null },
-  { id: 3, label: 'Бас-гитары', link: 'bas', linkType: null },
-  { id: 4, label: 'Классические гитары', link: 'classic', linkType: null },
-  { id: 5, label: 'Укулеле', link: 'ukulele', linkType: null },
+  {
+    id: 1,
+    label: 'Акустические гитары',
+    link: 'acoustic',
+    linkType: null,
+    imgSrc: '#',
+  },
+  {
+    id: 2,
+    label: 'Электрогитары',
+    link: 'electric',
+    linkType: null,
+    imgSrc: '#',
+  },
+  { id: 3, label: 'Бас-гитары', link: 'bas', linkType: null, imgSrc: '#' },
+  {
+    id: 4,
+    label: 'Классические гитары',
+    link: 'classic',
+    linkType: null,
+    imgSrc: '#',
+  },
+  { id: 5, label: 'Укулеле', link: 'ukulele', linkType: null, imgSrc: '#' },
 ]
 
 export const ADDITIONAL_MENU_ITEMS = [

@@ -11,7 +11,9 @@ export const HomePage = () => {
 
   const content = (
     <>
-      <MainTitle>Широкий ассортимент инструментов на любой вкус</MainTitle>
+      <MainTitle>
+        Широкий ассортимент струнных инструментов на любой вкус
+      </MainTitle>
       <HomePageSlider images={SLIDER_IMAGES} />
     </>
   )

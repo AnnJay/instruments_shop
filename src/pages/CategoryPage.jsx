@@ -23,12 +23,14 @@ export const CardsContainer = styled.div`
 export const CategoryPage = () => {
   const { categoryType } = useParams()
 
-  const { data, loaded, fetch } = useAxiosRequest(`/categories/${categoryType}`, 'GET')
+  const { data, loaded, fetch } = useAxiosRequest(
+    `/categories/${categoryType}`,
+    'GET'
+  )
 
   useEffect(() => {
-    fetch(`/categories/${categoryType}`)
+    fetch()
   }, [categoryType])
-
 
   const content = (
     <>

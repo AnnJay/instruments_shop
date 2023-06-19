@@ -2,9 +2,12 @@ import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { PageLayout } from '../pageLayout'
-import { InstrumentSection, PageContent } from '../components'
+import { CommentSection, InstrumentSection, PageContent } from '../components'
 import { useAxiosRequest } from '../hooks'
-import { convertObjectsFieldsToCamelCase } from '../functions'
+import {
+  convertObjectsFieldsToCamelCase,
+  convertResponseFieldsToCamelCase,
+} from '../functions'
 import { InstrumentContext } from '../context'
 
 export const InstrumentPage = () => {
@@ -25,9 +28,16 @@ export const InstrumentPage = () => {
   const content = (
     <>
       {data && (
-        <InstrumentSection
-          {...convertObjectsFieldsToCamelCase(data.instrument)}
-        />
+        <>
+          <InstrumentSection
+            {...convertObjectsFieldsToCamelCase(data.instrument)}
+          />
+
+          <CommentSection
+            comments={convertResponseFieldsToCamelCase(data.comments)}
+            fetch={fetch}
+          />
+        </>
       )}
     </>
   )

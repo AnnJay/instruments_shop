@@ -1,4 +1,5 @@
 export * from './CategoryCard'
+export * from './CommentForm'
 export * from './CommentSection'
 export * from './HomePageSlider'
 export * from './InstrumentCard'

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { InstrumentsInstance } from '../api'
+import { openErrorNotification } from '../functions'
 
 export const useAxiosRequest = (url, method, payload) => {
   const [data, setData] = useState(null)
@@ -10,16 +11,17 @@ export const useAxiosRequest = (url, method, payload) => {
 
   if (payload) requestConfig.data = payload
 
-  const fetch = (requestConfig) => {
+  const fetch = (config = requestConfig) => {
     ;(async () => {
       setLoaded(false)
-      
+
       try {
-        const response = await InstrumentsInstance.request(requestConfig)
+        const response = await InstrumentsInstance.request(config)
 
         setData(response.data.data)
       } catch (error) {
         setError(error.message)
+        openErrorNotification(error.message, 'REQUEST_ERROR')
       } finally {
         setLoaded(true)
       }

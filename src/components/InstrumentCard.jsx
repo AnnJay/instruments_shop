@@ -78,7 +78,9 @@ export const InstrumentCard = ({ imgUrl, name, price, id }) => {
 
       {price && <span>{getPriceView(price)}</span>}
 
-      <StyledButton>В корзину</StyledButton>
+      <Link to={`/${categoryType}/${id}`}>
+        <StyledButton>Детали</StyledButton>
+      </Link>
     </CardContainer>
   )
 }

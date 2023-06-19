@@ -21,6 +21,10 @@ export const StyledLogo = styled.img`
   height: 100px;
 `
 
+export const TransformedLogo = styled(StyledLogo)`
+  transform: rotate3d(0, 1, 0, 180deg);
+`
+
 export const HeaderInnerContainer = styled(ContentContainer)`
   width: 100%;
   display: flex;
@@ -34,6 +38,10 @@ export const Header = () => {
       <HeaderInnerContainer>
         <Link to="/">
           <StyledLogo src="/images/logo.svg" alt="site logo" />
+        </Link>
+
+        <Link to="/">
+          <TransformedLogo src="/images/logo.svg" alt="site logo" />
         </Link>
 
         <Navigation />
